@@ -41,6 +41,10 @@ function showPicker() {
   }
 }
 
+function getFileId() {
+console.log(fileId);
+}
+ 
 /**
  * Gets the user's OAuth 2.0 access token so that it can be passed to Picker.
  * This technique keeps Picker from needing to show its own authorization
@@ -59,4 +63,13 @@ function getOAuthToken() {
     // TODO (Developer) - Handle exception
     console.log('Failed with error: %s', e.error);
   }
+}
+
+function getTardyData() {
+  try {
+    data = ingestFile('1qvhRTAoGk4gN98fmAk0nMCq6eC-5vlHK');
+  } catch (e) {
+    console.log('Failed with error: %s', e.error);
+  }
+  // console.log(data);
 }

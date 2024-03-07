@@ -16,7 +16,7 @@ function ingestFile(fileId) {
   const fileName = file.getName();
   const fileType = file.getMimeType();
   const fileSize = file.getSize();
-  if (fileType == 'application/octet-stream') {
+  if (fileType == 'application/octet-stream' || 'text.csv') {
     var data = Utilities.parseCsv(file.getBlob().getDataAsString());
   }
   console.log(fileName);
