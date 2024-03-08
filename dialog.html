@@ -77,15 +77,16 @@
         var id = doc[google.picker.Document.ID];
         var url = doc[google.picker.Document.URL];
         var title = doc[google.picker.Document.NAME];
-        google.script.run
-        .withSuccessHandler
+        //google.script.run.getFileId(id);
         document.getElementById('result').innerHTML =
             '<b>You chose:</b><br>Name: <a href="' + url + '">' + title +
             '</a><br>ID: ' + id;
       } else if (action == google.picker.Action.CANCEL) {
         document.getElementById('result').innerHTML = 'Picker canceled.';
       }
-      google.script.run.getFileId(id);
+      google.script.run.getFileId(id)
+      //.withSuccessHandler()
+      //.withFailureHandler();
     }
 
     /**

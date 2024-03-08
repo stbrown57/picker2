@@ -41,10 +41,16 @@ function showPicker() {
   }
 }
 
-function getFileId() {
-console.log(fileId);
+function getFileId(fileId) {
+  console.log(fileId);
+  try {
+    data = ingestFile(fileId);
+  } catch (e) {
+    console.log('Failed with error: %s', e.error);
+  }
+  console.log(data);
 }
- 
+
 /**
  * Gets the user's OAuth 2.0 access token so that it can be passed to Picker.
  * This technique keeps Picker from needing to show its own authorization
@@ -65,11 +71,12 @@ function getOAuthToken() {
   }
 }
 
-function getTardyData() {
+function getFileData() {
+  var fileId = '1qvhRTAoGk4gN98fmAk0nMCq6eC-5vlHK'
   try {
-    data = ingestFile('1qvhRTAoGk4gN98fmAk0nMCq6eC-5vlHK');
+    data = ingestFile(fileId);
   } catch (e) {
     console.log('Failed with error: %s', e.error);
   }
-  // console.log(data);
+  console.log(data);
 }
